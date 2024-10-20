@@ -1,0 +1,69 @@
+---
+import LayoutSimple from "../layouts/LayoutSimple.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+---
+
+<LayoutSimple Title="Error 404 | No se encontro esta ruta">
+    <style>
+        .error404 {
+            width: 100%;
+            height: 95vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+        }
+
+        h1 {
+            color: yellow;
+        }
+
+       
+
+    </style>
+
+    <Header></Header>
+
+    <div class="error404">
+        <div class="messsage-error">
+            <h1>Error 404</h1>
+            <hr>
+            <b>Ruta no encontrada</b>
+            <hr>
+            <center>
+                <button data-tooltip="Realiza un reporte" id="report">Reportar ruta</button>
+                <hr>
+                <a data-tooltip="Abandona esta pagina" href="/"><div role="button" class="secondary">Volver a inicio</div></a>
+            </center>
+        </div>
+
+        <dialog>
+  <article>
+    <h2>Realiza tu reporte</h2>
+    <p>
+     Gracias por considerar reportar este error, solo si piensas que esta ruta deberia mostrar algo.
+    </p>
+    <label for="ruta">Ruta</label>
+    <input id="ruta" type="text" placeholder="ej: /docs" name="ruta" maxlength="10">
+    <label for="user">Tu usuario de discord</label>
+    <input id="user" type="text" placeholder="ej: pepitoCrack" name="user" maxlength="25">
+    <label for="message">Mensaje del error</label>
+    <input type="text" id="message" class="textarea" name="description" maxlength="50" placeholder="ej: ¡La ruta /docs ya no existe! ¿Algo ha pasado">
+    <footer>
+      <button data-tooltip="Cierra este formulario" id="close" class="secondary">
+        Cancelar
+      </button>
+      <button data-tooltip="Enviar" id="submit">Enviar</button>
+    </footer>
+  </article>
+</dialog>
+
+        
+    </div>
+
+    <script src="../scripts/404.js"></script>
+
+    <Footer></Footer>
+
+</LayoutSimple>
